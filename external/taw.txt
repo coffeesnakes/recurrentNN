@@ -1,0 +1,13 @@
+Resource Constraints: The service might have exceeded its resource limits, such as CPU or memory, leading Kubernetes to evict the pod.
+
+Deployment Strategy: If you're using a rolling update strategy, the deployment might have initiated a pod restart as part of an update process. Check if any deployments or updates were made recently.
+
+Health Checks: Readiness or liveness probes might have failed, causing Kubernetes to restart the pod. Review the probe configurations and any recent failures.
+
+Cluster Maintenance: The cluster might have undergone maintenance activities, such as node upgrades or rebalancing, which could cause pod rescheduling.
+
+Application-Level Issues: Unhandled exceptions, crashes, or other internal issues within the application might have led to the pod being recycled.
+
+Node Issues: Problems with the underlying node, such as hardware failures or operating system issues, could also cause pods to be rescheduled.
+
+Pod Disruption Budget: If you have a Pod Disruption Budget (PDB) configured, ensure it is not set too restrictively, which might prevent Kubernetes from rescheduling pods correctly during maintenance.
